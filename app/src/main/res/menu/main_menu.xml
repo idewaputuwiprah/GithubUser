@@ -8,6 +8,11 @@
         app:showAsAction="collapseActionView|always"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
+    <item android:id="@+id/action_fav"
+        android:title="@string/favorite"
+        android:icon="@drawable/ic_favorite_filled"
+        app:showAsAction="ifRoom" />
+
     <item android:id="@+id/action_option"
         android:title="@string/setting"
         app:showAsAction="ifRoom"

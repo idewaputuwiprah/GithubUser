@@ -15,9 +15,11 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.githubuser.favorite.FavoriteActivity
 import com.dicoding.githubuser.retrofit.ApiService
 import com.dicoding.githubuser.retrofit.SearchResponse
 import com.dicoding.githubuser.retrofit.UserResponse
+import com.dicoding.githubuser.setting.SettingActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_following.*
 import retrofit2.Call
@@ -93,9 +95,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_option) {
-            val intent = Intent(Settings.ACTION_LOCALE_SETTINGS)
-            startActivity(intent)
+        when (item.itemId) {
+            R.id.action_option -> {
+//                val intent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+                val intent = Intent(this, SettingActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.action_fav -> {
+                val intent = Intent(this, FavoriteActivity::class.java)
+                startActivity(intent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }

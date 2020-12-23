@@ -79,18 +79,17 @@
                 android:textColor="#BEBEBE"
                 android:textSize="12sp"
                 tools:text="Location"
-                android:drawableStart="@drawable/baseline_location_on_24"
                 android:drawablePadding="5dp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:layout_toStartOf="@+id/separator"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                app:drawableStartCompat="@drawable/baseline_location_on_24" />
 
             <TextView
                 android:id="@+id/tv_company"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_work_24"
                 android:drawablePadding="7dp"
                 android:fontFamily="@font/fira_sans"
                 android:textColor="#BEBEBE"
@@ -99,7 +98,8 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:layout_toEndOf="@+id/separator"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                app:drawableStartCompat="@drawable/ic_baseline_work_24" />
         </RelativeLayout>
     </LinearLayout>
 
