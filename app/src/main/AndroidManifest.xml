@@ -22,7 +22,6 @@
             android:exported="true"
             android:readPermission="com.dicoding.githubuser.READ_DATABASE"
             android:writePermission="com.dicoding.githubuser.WRITE_DATABASE"/>
-
         <receiver
             android:name=".reminder.ReminderReceiver"
             android:enabled="true"

@@ -17,21 +17,19 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class UserFavoriteViewModel(application: Application): AndroidViewModel(application) {
-    var readAllData: LiveData<List<UserFavorite>>
+//    var readAllData: LiveData<List<UserFavorite>>
     var mutableReadAllData: MutableLiveData<List<UserFavorite>> = MutableLiveData()
-    private var repository: UserFavoriteRepository
-    private var contentResolver: ContentResolver
-    private var context: Context
+//    private var repository: UserFavoriteRepository
+    private var contentResolver: ContentResolver = application.contentResolver
+//    private var context: Context = application.applicationContext
 
     init {
         //default room
-        val userFavoriteDao = UserFavoriteDatabase.getDatabase(application).userFavoriteDao()
-        repository = UserFavoriteRepository(userFavoriteDao)
-        readAllData = repository.readAllData
+//        val userFavoriteDao = UserFavoriteDatabase.getDatabase(application).userFavoriteDao()
+//        repository = UserFavoriteRepository(userFavoriteDao)
+//        readAllData = repository.readAllData
 
         //using content provider
-        context = application.applicationContext
-        contentResolver = application.contentResolver
         setData()
     }
 
@@ -60,15 +58,15 @@ class UserFavoriteViewModel(application: Application): AndroidViewModel(applicat
     }
 
     //default room
-    fun addUser(userFavorite: UserFavorite) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.addUser(userFavorite)
-        }
-    }
-
-    fun deleteUser(userFavorite: UserFavorite) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.deleteUser(userFavorite)
-        }
-    }
+//    fun addUser(userFavorite: UserFavorite) {
+//        viewModelScope.launch(Dispatchers.IO) {
+//            repository.addUser(userFavorite)
+//        }
+//    }
+//
+//    fun deleteUser(userFavorite: UserFavorite) {
+//        viewModelScope.launch(Dispatchers.IO) {
+//            repository.deleteUser(userFavorite)
+//        }
+//    }
 }

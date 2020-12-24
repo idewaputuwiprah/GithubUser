@@ -116,4 +116,8 @@
     <string name="setting">Pengaturan</string>
     <string name="search_hint">Masukkan text</string>
     <string name="main_title">User Github</string>
+    <string name="favorite">Favorit</string>
+    <string name="key_reminder">pengingat</string>
+    <string name="title_reminder">Pengingat jam 9 pagi</string>
+    <string name="notif_message">Jangan lupa membuka aplikasi hari ini!</string>
 </resources>

@@ -146,12 +146,12 @@ class DetailActivity : AppCompatActivity() {
         return super.onPrepareOptionsMenu(menu)
     }
 
-    private fun addUser() {
-        val userFavorite = getModel()
-        userFavoriteViewModel.addUser(userFavorite)
-        isFavorite = true
-        invalidateOptionsMenu()
-    }
+//    private fun addUser() {
+//        val userFavorite = getModel()
+//        userFavoriteViewModel.addUser(userFavorite)
+//        isFavorite = true
+//        invalidateOptionsMenu()
+//    }
 
     private fun addUserCR() {
         val values = getValues()
@@ -160,12 +160,12 @@ class DetailActivity : AppCompatActivity() {
         invalidateOptionsMenu()
     }
 
-    private fun deleteUser() {
-        val userFavorite = getModel()
-        userFavoriteViewModel.deleteUser(userFavorite)
-        isFavorite = false
-        invalidateOptionsMenu()
-    }
+//    private fun deleteUser() {
+//        val userFavorite = getModel()
+//        userFavoriteViewModel.deleteUser(userFavorite)
+//        isFavorite = false
+//        invalidateOptionsMenu()
+//    }
 
     private fun deleteUserCR() {
         uriWithId = Uri.parse("$CONTENT_URI/$id")

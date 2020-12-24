@@ -6,11 +6,9 @@ import android.content.Intent
 import android.content.res.TypedArray
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,10 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.githubuser.favorite.FavoriteActivity
 import com.dicoding.githubuser.retrofit.ApiService
 import com.dicoding.githubuser.retrofit.SearchResponse
-import com.dicoding.githubuser.retrofit.UserResponse
 import com.dicoding.githubuser.setting.SettingActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_following.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -117,6 +117,6 @@
     <string name="main_title">Github\'s User</string>
     <string name="favorite">Favorite</string>
     <string name="key_reminder">reminder</string>
-    <string name="title_reminder">Reminder at 9.AM</string>
-    <string name="notif_message">Jangan lupa membuka aplikasi hari ini</string>
+    <string name="title_reminder">Reminder at 9 A.M.</string>
+    <string name="notif_message">Do not forget to open the apps today!</string>
 </resources>

@@ -65,7 +65,7 @@ class FavoriteActivity : AppCompatActivity() {
         handlerThread.start()
         val handler = Handler(handlerThread.looper)
 
-        var myObserver = object : ContentObserver(handler) {
+        val myObserver = object : ContentObserver(handler) {
             override fun onChange(selfChange: Boolean) {
                 userFavoriteViewModel.setData()
             }
