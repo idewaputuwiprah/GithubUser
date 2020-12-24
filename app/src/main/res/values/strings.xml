@@ -119,4 +119,6 @@
     <string name="key_reminder">reminder</string>
     <string name="title_reminder">Reminder at 9 A.M.</string>
     <string name="notif_message">Do not forget to open the apps today!</string>
+    <string name="key_language">language</string>
+    <string name="title_language">Change Language</string>
 </resources>

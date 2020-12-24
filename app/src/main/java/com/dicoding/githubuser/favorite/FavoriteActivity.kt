@@ -54,9 +54,6 @@ class FavoriteActivity : AppCompatActivity() {
         }
 
         userFavoriteViewModel = ViewModelProvider(this).get(UserFavoriteViewModel::class.java)
-//        userFavoriteViewModel.readAllData.observe(this, Observer { users ->
-//            setView(users)
-//        })
         userFavoriteViewModel.getData().observe(this, Observer { users->
             setView(users)
         })

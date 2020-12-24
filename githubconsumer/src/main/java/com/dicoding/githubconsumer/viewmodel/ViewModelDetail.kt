@@ -3,6 +3,7 @@ package com.dicoding.githubconsumer.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.dicoding.githubconsumer.BuildConfig
 import com.dicoding.githubconsumer.retrofit.ApiService
 import com.dicoding.githubconsumer.retrofit.UserDetailResponse
 import com.dicoding.githubconsumer.retrofit.UserResponse
@@ -15,7 +16,7 @@ class ViewModelDetail: ViewModel() {
     private val listFollowers = MutableLiveData<ArrayList<UserResponse>>()
     private val listFollowing = MutableLiveData<ArrayList<UserResponse>>()
     private val user = MutableLiveData<UserDetailResponse>()
-    private val token = "token bd285bb153303924cf64012554796f968bc06ca2"
+    private val token = "token ${BuildConfig.GITHUB_TOKEN}"
 
     fun setFollowers(username: String) {
 

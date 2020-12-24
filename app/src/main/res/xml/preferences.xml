@@ -9,4 +9,8 @@
         app:iconSpaceReserved="false"
         android:defaultValue="false" />
 
+    <Preference
+        app:key="@string/key_language"
+        app:title="@string/title_language"
+        app:iconSpaceReserved="false" />
 </PreferenceScreen>

@@ -1,7 +1,5 @@
 package com.dicoding.githubuser.database
 
-import android.content.ContentValues
-import androidx.annotation.Nullable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -44,7 +42,4 @@ data class UserFavorite (
 
     @ColumnInfo(name = AVATAR_URL)
     var avatar_url: String? = ""
-) {
-//    constructor() : this(name = "", username = "", public_repos = "", followers = "", following = "", company = "", location = "",
-//        avatar_url = "")
-}
+)

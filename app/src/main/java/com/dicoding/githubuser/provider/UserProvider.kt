@@ -18,7 +18,6 @@ import com.dicoding.githubuser.database.DatabaseContract.UserColumns.Companion._
 import com.dicoding.githubuser.database.UserFavorite
 import com.dicoding.githubuser.database.UserFavoriteDatabase
 import com.dicoding.githubuser.database.UserFavoriteRepository
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 
 class UserProvider : ContentProvider() {

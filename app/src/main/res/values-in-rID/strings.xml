@@ -120,4 +120,6 @@
     <string name="key_reminder">pengingat</string>
     <string name="title_reminder">Pengingat jam 9 pagi</string>
     <string name="notif_message">Jangan lupa membuka aplikasi hari ini!</string>
+    <string name="key_language">bahasa</string>
+    <string name="title_language">Ganti Bahasa</string>
 </resources>

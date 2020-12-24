@@ -18,7 +18,7 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.ListViewHolder>() {
                 tv_name.text = item.name
                 tv_username.text = item.username
                 val avatar = item.avatar_int ?: item.avatar_string
-                Glide.with(itemView.context)
+                Glide.with(context)
                     .load(avatar)
                     .apply(RequestOptions().override(55,55))
                     .into(img_user)

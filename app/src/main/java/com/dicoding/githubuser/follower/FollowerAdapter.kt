@@ -16,7 +16,7 @@ class FollowerAdapter: RecyclerView.Adapter<FollowerAdapter.ViewHolder>() {
         fun bind(item: UserResponse) {
             with(itemView) {
                 tv_name_detail.text = item.login
-                Glide.with(itemView.context)
+                Glide.with(context)
                     .load(item.avatar_url)
                     .centerCrop()
                     .into(img_user_detail)

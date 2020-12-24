@@ -1,4 +1,4 @@
-package com.dicoding.githubconsumer.viewmodel
+package com.dicoding.githubconsumer
 
 import android.content.Context
 import androidx.annotation.StringRes

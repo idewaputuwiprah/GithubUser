@@ -3,9 +3,6 @@ package com.dicoding.githubuser
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -21,7 +18,7 @@ class UserAdapter() : RecyclerView.Adapter<UserAdapter.ListViewHolder>() {
                 tv_name.text = item.name
                 tv_username.text = item.username
                 val avatar = item.avatar_int ?: item.avatar_string
-                Glide.with(itemView.context)
+                Glide.with(context)
                     .load(avatar)
                     .apply(RequestOptions().override(55,55))
                     .into(img_user)

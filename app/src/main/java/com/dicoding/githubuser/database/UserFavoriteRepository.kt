@@ -21,16 +21,6 @@ import kotlinx.coroutines.withContext
 
 class UserFavoriteRepository(private val userFavoriteDao: UserFavoriteDao) {
     private var myDispatcher: CoroutineDispatcher = Dispatchers.IO
-    val readAllData: LiveData<List<UserFavorite>> = userFavoriteDao.readAllData()
-
-    //default room
-    suspend fun addUser(userFavorite: UserFavorite) {
-        return userFavoriteDao.addUser(userFavorite)
-    }
-
-    suspend fun deleteUser(userFavorite: UserFavorite) {
-        userFavoriteDao.deleteUser(userFavorite)
-    }
 
     //content provider
     suspend fun readUserCR(): Cursor {

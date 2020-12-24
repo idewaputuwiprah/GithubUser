@@ -22,7 +22,6 @@ import com.dicoding.githubconsumer.userFavorite.DatabaseContract.UserColumns.Com
 import com.dicoding.githubconsumer.userFavorite.DatabaseContract.UserColumns.Companion.PUBLIC_REPOS
 import com.dicoding.githubconsumer.userFavorite.DatabaseContract.UserColumns.Companion.USERNAME
 import com.dicoding.githubconsumer.userFavorite.DatabaseContract.UserColumns.Companion._ID
-import com.dicoding.githubconsumer.viewmodel.SectionPagerAdapter
 import com.dicoding.githubconsumer.viewmodel.UserViewModel
 import com.dicoding.githubconsumer.viewmodel.ViewModelDetail
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -93,7 +92,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     fun getUser(): String {
-        return username as String
+        return username.orEmpty()
     }
 
     fun getViewModel(): ViewModelDetail {

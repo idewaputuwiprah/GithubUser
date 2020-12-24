@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -88,17 +87,6 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun updateIconFav(username: String) {
-//        userFavoriteViewModel.readAllData.observe(this, Observer { users->
-//            val thisUser = username
-//            for (user in users) {
-//                if (user.username.toString().equals(thisUser, true)) {
-//                    id = user.id
-//                    isFavorite = true
-//                    break
-//                }
-//            }
-//            invalidateOptionsMenu()
-//        })
         userFavoriteViewModel.getData().observe(this, Observer { users->
             val thisUser = username
             for (user in users) {
@@ -113,7 +101,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     fun getUser(): String {
-        return username as String
+        return username.orEmpty()
     }
 
     fun getViewModel(): ViewModelDetail {
@@ -146,13 +134,6 @@ class DetailActivity : AppCompatActivity() {
         return super.onPrepareOptionsMenu(menu)
     }
 
-//    private fun addUser() {
-//        val userFavorite = getModel()
-//        userFavoriteViewModel.addUser(userFavorite)
-//        isFavorite = true
-//        invalidateOptionsMenu()
-//    }
-
     private fun addUserCR() {
         val values = getValues()
         userFavoriteViewModel.addUserCR(CONTENT_URI, values)
@@ -160,32 +141,11 @@ class DetailActivity : AppCompatActivity() {
         invalidateOptionsMenu()
     }
 
-//    private fun deleteUser() {
-//        val userFavorite = getModel()
-//        userFavoriteViewModel.deleteUser(userFavorite)
-//        isFavorite = false
-//        invalidateOptionsMenu()
-//    }
-
     private fun deleteUserCR() {
         uriWithId = Uri.parse("$CONTENT_URI/$id")
         userFavoriteViewModel.deleteUserCR(uriWithId)
         isFavorite = false
         invalidateOptionsMenu()
-    }
-
-    private fun getModel(): UserFavorite {
-        return UserFavorite(
-            id = id,
-            name = tv_detailnama.text.toString(),
-            username = tv_detailusername.text.toString(),
-            public_repos = tv_repo2.text.toString(),
-            followers = tv_followers2.text.toString(),
-            following = tv_following2.text.toString(),
-            company = tv_company.text.toString(),
-            location = tv_location.text.toString(),
-            avatar_url = avatarUrl
-        )
     }
 
     private fun getValues(): ContentValues {
