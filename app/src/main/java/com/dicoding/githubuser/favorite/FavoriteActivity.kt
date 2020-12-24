@@ -1,8 +1,11 @@
 package com.dicoding.githubuser.favorite
 
 import android.content.Intent
+import android.database.ContentObserver
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.HandlerThread
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -14,6 +17,7 @@ import com.dicoding.githubuser.UserAdapter
 import com.dicoding.githubuser.UserModel
 import com.dicoding.githubuser.database.UserFavorite
 import com.dicoding.githubuser.database.UserFavoriteViewModel
+import com.dicoding.githubuser.provider.UserProvider.Companion.CONTENT_URI
 import kotlinx.android.synthetic.main.activity_favorite.*
 
 class FavoriteActivity : AppCompatActivity() {
@@ -50,9 +54,24 @@ class FavoriteActivity : AppCompatActivity() {
         }
 
         userFavoriteViewModel = ViewModelProvider(this).get(UserFavoriteViewModel::class.java)
-        userFavoriteViewModel.readAllData.observe(this, Observer { users ->
+//        userFavoriteViewModel.readAllData.observe(this, Observer { users ->
+//            setView(users)
+//        })
+        userFavoriteViewModel.getData().observe(this, Observer { users->
             setView(users)
         })
+
+        val handlerThread = HandlerThread("DataObserver")
+        handlerThread.start()
+        val handler = Handler(handlerThread.looper)
+
+        var myObserver = object : ContentObserver(handler) {
+            override fun onChange(selfChange: Boolean) {
+                userFavoriteViewModel.setData()
+            }
+        }
+
+        contentResolver.registerContentObserver(CONTENT_URI, true, myObserver)
     }
 
     private fun setView(users: List<UserFavorite>) {
