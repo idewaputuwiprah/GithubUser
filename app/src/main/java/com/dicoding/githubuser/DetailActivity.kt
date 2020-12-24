@@ -88,7 +88,18 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun updateIconFav(username: String) {
-        userFavoriteViewModel.readAllData.observe(this, Observer { users->
+//        userFavoriteViewModel.readAllData.observe(this, Observer { users->
+//            val thisUser = username
+//            for (user in users) {
+//                if (user.username.toString().equals(thisUser, true)) {
+//                    id = user.id
+//                    isFavorite = true
+//                    break
+//                }
+//            }
+//            invalidateOptionsMenu()
+//        })
+        userFavoriteViewModel.getData().observe(this, Observer { users->
             val thisUser = username
             for (user in users) {
                 if (user.username.toString().equals(thisUser, true)) {
